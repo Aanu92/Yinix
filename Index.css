@@ -9,4 +9,62 @@
     --Light: #eee;
     --Black: #333;
     --Orange: #FEBD59;
+    --Special-Black: #68838b;
+
+    --Light-Border: 2px solid var(--Light);
+}
+
+:root.Dark_Mode {
+    --White: #222;
+    --Light: #333;
+    --Black: #fff;
+    --Orange: #FEBD59;
+    --Special-Black: #dbf5ff;
+}
+
+body {
+    background: var(--White);
+}
+
+
+
+
+
+
+
+.Whiteboard_Area {
+    display: flex;
+}
+
+.Whiteboard_Area .Whiteboard_Tools {
+    gap: 32px;
+    padding: 25px;
+    display: flex;
+    position: fixed;
+    bottom: 50px;
+    max-height: 30px;
+    text-align: center;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    border: var(--Light-Border);
+}
+
+.Whiteboard_Area .Whiteboard_Tools div {
+    transition: 0.2s ease-in-out;
+}
+
+.Whiteboard_Area .Whiteboard_Tools div span {
+    font-size: 32px;
+    cursor: pointer;
+    user-select: none;
+    color: var(--Special-Black);
+}
+.Whiteboard_Area .Whiteboard_Tools div span:hover, .Whiteboard_Area .Whiteboard_Tools div.Active span {
+    color: var(--Orange);
+}
+
+.Whiteboard_Area .Whiteboard_Tools div.Active {
+    color: var(--Orange);
+    transform: translateY(-10px);
 }
